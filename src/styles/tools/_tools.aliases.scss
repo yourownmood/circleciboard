@@ -1,0 +1,67 @@
+// --------------------------------------------------
+// +++ TOOLS ALIASES +++
+// --------------------------------------------------
+
+
+// === VARIABLES ===
+// --------------------------------------------------
+
+// UNIT
+
+$unit: $inuit-global-spacing-unit;
+
+// UNIT-TINY
+
+$unit-tiny: $inuit-global-spacing-unit-tiny;
+
+// UNIT-SMALL
+
+$unit-small: $inuit-global-spacing-unit-small;
+
+// UNIT-LARGE
+
+$unit-large: $inuit-global-spacing-unit-large;
+
+// UNIT-HUGE
+
+$unit-huge: $inuit-global-spacing-unit-huge;
+
+// === TOOLS ===
+// --------------------------------------------------
+
+// FONT-SIZE
+
+@mixin font-size($args...) {
+  @include inuit-font-size($args...);
+}
+
+// CLEARFIX
+
+@mixin clearfix($args...) {
+  @include inuit-clearfix($args...);
+}
+
+// === DOCS ===
+// --------------------------------------------------
+
+/*
+---
+name: Aliases
+tools:
+  - Aliases
+---
+
+Reassigned variables:
+
+* `$inuit-global-spacing-unit` to **`$unit`**.
+* `$inuit-global-spacing-unit-tiny` to **`$unit-tiny`**.
+* `$inuit-global-spacing-unit-small` to **`$unit-small`**.
+* `$inuit-global-spacing-unit-large` to **`$unit-large`**.
+* `$inuit-global-spacing-unit-huge` to **`$unit-huge`**.
+
+Reassigned tools:
+
+* **`unuit-font-size($args...)`** alias for `font-size($args...)`
+* **`unuit-clearfix($args...)`** alias for `clearfix($args...)`
+
+*/

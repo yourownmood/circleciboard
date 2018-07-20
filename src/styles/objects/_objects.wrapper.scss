@@ -1,0 +1,38 @@
+// ---------------------------------------------------
+// +++ OBJECTS WRAPPER +++
+// --------------------------------------------------
+
+
+// === VARIABLES ===
+// --------------------------------------------------
+
+// WRAPPER-WIDTH
+
+$inuit-wrapper-width: 1200px !default;
+
+// === IMPORT ===
+// --------------------------------------------------
+
+// INUITCSS OBJECTS WRAPPER
+
+@import "node_modules/inuitcss/objects/objects.wrapper";
+
+// === DOCS ===
+// --------------------------------------------------
+
+/*
+---
+name: Wrapper
+objects:
+  - Wrapper
+hidePreview: true
+---
+
+Page-level constraining and wrapping elements.
+`.o-wrapper` centers the wrapper in the page.
+
+```html
+<div class="o-wrapper"></div>
+```
+
+*/

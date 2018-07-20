@@ -1,0 +1,35 @@
+// --------------------------------------------------
+// +++ COMPONENT STATUS +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// STATUS
+
+.c-status {
+  margin: 3px;
+  padding: 5px;
+}
+
+// === MODIFIER ===
+// --------------------------------------------------
+
+// SUCCES
+
+.c-status--succes {
+  background-color: green;
+}
+
+// ERROR
+
+.c-status--error {
+  background-color: red;
+}
+
+// PENDING
+
+.c-status--pending {
+  background-color: blue;
+}

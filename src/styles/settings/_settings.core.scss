@@ -1,0 +1,63 @@
+// --------------------------------------------------
+// +++ SETTINGS CORE +++
+// --------------------------------------------------
+
+
+// === VARIABLES ===
+// --------------------------------------------------
+
+// BASELINE
+
+$inuit-global-baseline: 6px !default;
+
+// SPACING-UNIT-FACTORS
+
+$inuit-global-spacing-unit-factor-tiny:   1 !default;   // 6px
+$inuit-global-spacing-unit-factor-small:  2 !default;   // 12px
+$inuit-global-spacing-unit-factor:        4 !default;   // 24px
+$inuit-global-spacing-unit-factor-large:  8 !default;   // 48px
+$inuit-global-spacing-unit-factor-huge:   16 !default;  // 96px
+
+// === IMPORT ===
+// --------------------------------------------------
+
+// INUITCSS SETTIGNS CORE
+
+@import "node_modules/inuitcss/settings/settings.core";
+
+// === EXTEND ===
+// --------------------------------------------------
+
+// FONT-SIZE
+
+$inuit-global-font-size: 16px !default;
+
+// LINE-HEIGHT
+
+$inuit-global-line-height: $inuit-global-spacing-unit !default;
+
+// === DOCS ===
+// --------------------------------------------------
+
+/*
+---
+name: Core
+settings:
+  - Core
+---
+
+inuitcss’ core and setup settings.
+
+Base typographical styles an baseline grid.
+You need to define these values in pixels:
+inuitcss will convert them to more
+appropriate units.
+
+Variables:
+
+```scss
+$inuit-global-font-size: 16px;
+$inuit-global-line-height: 24px;
+```
+
+*/

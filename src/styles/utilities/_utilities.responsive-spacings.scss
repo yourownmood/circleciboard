@@ -1,0 +1,65 @@
+// --------------------------------------------------
+// +++ UTILITIES RESPONSIVE SPACINGS +++
+// --------------------------------------------------
+
+
+// === VARIABLES ===
+// --------------------------------------------------
+
+// DIRECTIONS
+
+/*
+* How to use:
+*
+* $inuit-responsive-spacing-directions: (
+*   null: null,
+*   "-bottom": "-bottom",
+* );
+*/
+$inuit-responsive-spacing-directions: null !default;
+
+// PROPERTIES
+
+/*
+* How to use:
+*
+* $inuit-responsive-spacing-properties: (
+*   "margin": "margin",
+* );
+*/
+$inuit-responsive-spacing-properties: null !default;
+
+// SIZE
+
+/*
+* How to use:
+*
+* $inuit-responsive-spacing-sizes: (
+*   "-small": $inuit-global-spacing-unit-small,
+* );
+*/
+$inuit-responsive-spacing-sizes: null !default;
+
+// === IMPORT ===
+// --------------------------------------------------
+
+// INUITCSS UTILITIES RESPONSIVE SPACINGS
+
+@import "node_modules/inuitcss/utilities/utilities.responsive-spacings";
+
+// === DOCS ===
+// --------------------------------------------------
+
+/*
+---
+name: Responsive-spacings
+utilities:
+  - Responsive-spacings
+---
+
+Utility classes enhancing the normal spacing classes by adding responsiveness
+to them. By default this brings us the following classes:
+
+* `.u-margin-bottom-none@mobile`
+
+*/

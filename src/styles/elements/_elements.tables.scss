@@ -1,0 +1,55 @@
+// --------------------------------------------------
+// +++ ELEMENTS TABLES +++
+// --------------------------------------------------
+
+
+// === IMPORT ===
+// --------------------------------------------------
+
+// INUITCSS ELEMENTS TABLES
+
+@import "node_modules/inuitcss/elements/elements.tables";
+
+// === DOCS ===
+// --------------------------------------------------
+
+/*
+---
+name: Tables
+elements:
+  - Tables
+---
+
+**inuit.css import**
+
+inuit.css ensures tables fill up as much space as possible.
+
+---
+
+**Basic markup:**
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Column heading 1</th>
+      <th>Column heading 2</th>
+      <th>Column heading 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Column 1</td>
+      <td>Column 2</td>
+      <td>Column 3</td>
+    <tr>
+    <tr>
+      <td>Column 1</td>
+      <td>Column 2</td>
+      <td>Column 3</td>
+    <tr>
+  </tbody>
+</table>
+```
+
+*/
