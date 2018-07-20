@@ -1,13 +1,21 @@
 // --------------------------------------------------
-// +++ COMPONENT DASHBOARD +++
+// +++ COMPONENT TIMELINE +++
 // --------------------------------------------------
 
 
 // === BASE ===
 // --------------------------------------------------
 
-// DASHBOARD
+// TIMELINE
 
-.c-dashboard {
-  width: 100%;
+.c-timeline {
+  display: block;
+
+  margin-top: 10px;
+
+  .c-status:first-child {
+    padding: 7px;
+
+    border: 1px solid grey;
+  }
 }

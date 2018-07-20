@@ -17,11 +17,11 @@ class Dashboard extends React.Component<InterfaceProps> {
         <div className='o-wrapper'>
           <header>
             <h1>
-              Eneco Salesflow<br/>Smoke test
+              Eneco Salesflow
             </h1>
           </header>
           <p>
-            Scheduled-workflow (all)
+            Scheduled-workflow
           </p>
 
           <Timeline user={user} repository={repository} circleCiKey={circleCiKey} />

@@ -24,3 +24,4 @@ GET | https://circleci.com/api/v1.1/project/github/yourownmood/eneco-e2e/45/arti
 - [x] Adding SCSS pre-processing
 - [x] Including igloocss
 - [x] Add Jest testing
+- [ ] SCSS Linting
