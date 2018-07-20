@@ -12,7 +12,8 @@ interface InterfaceProps {
 
 interface InterfaceState {
   builds: [{}] | null,
-  fetching: boolean
+  fetching: boolean,
+  refreshing: boolean
 }
 
 interface InterfaceResponseItem {
@@ -24,22 +25,31 @@ interface InterfaceResponseItem {
 }
 
 class Timeline extends React.Component<InterfaceProps, InterfaceState> {
+  private intervalId: any;
+
   constructor(props: InterfaceProps) {
     super(props);
+
     this.state = {
       builds: null,
-      fetching: false
+      fetching: false,
+      refreshing: false
     };
   }
 
   public componentDidMount() {
-    this.callApi();
+    this.intervalId = setInterval(() => this.callApi(true), 60000);
+    this.callApi(false);
   }
 
-  public callApi = () => {
-    this.setState({ fetching: true });
+  public componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  public callApi = (refreshing: boolean) => {
+    this.setState({ fetching: true, refreshing });
     this.fetchApi()
-      .then(data => this.setState({ builds: data, fetching: false }))
+      .then(data => this.setState({ builds: data, fetching: false, refreshing: false }))
       .catch(reason => console.log(reason.message));
   }
 
@@ -74,12 +84,13 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
   }
 
   public render() {
-    const { builds, fetching } = this.state;
+    const { builds, fetching, refreshing } = this.state;
 
     return (
       <div className='c-timeline'>
-        {fetching && <Loader />}
+        {fetching && !builds && <Loader />}
         {!fetching && builds && builds.length && this.renderTimeline()}
+        {refreshing && <div className="c-timeline__refreshing">Refreshing</div>}
       </div>
     );
   }

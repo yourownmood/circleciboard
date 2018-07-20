@@ -59,6 +59,20 @@ it('should show a loader when fetching', () => {
   });
 });
 
+it('should show refreshing when fetching on interval', () => {
+  const component = mount(<Timeline {...props} />);
+  component.setState({ refreshing: true }, () => {
+    expect(component.find('.c-timeline__refreshing')).toHaveLength(1);
+  });
+});
+
+it('should handle call clearInterval on unmount', () => {
+  jest.useFakeTimers();
+  const component = mount(<Timeline {...props} />);
+  component.unmount();
+  expect(clearInterval).toHaveBeenCalledWith(2);
+});
+
 describe('renderTimeline', () => {
   it('should handle renderTimeline with builds correctly', () => {
     const component = mount(<Timeline {...props} />);
