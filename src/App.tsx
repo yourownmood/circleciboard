@@ -1,17 +1,17 @@
 import * as React from 'react'
 
 import Dashboard from './components/Dashboard'
-
-import data from './settings.json'
 import './styles/main.css'
 
 class App extends React.Component {
   public render() {
+    const Settings = require('./settings.json');
+
     return (
       <Dashboard
-        user={data.user}
-        repository={data.repository}
-        circleCiKey={data.circleCiKey}
+        user={Settings.user}
+        repository={Settings.repository}
+        circleCiKey={Settings.circleCiKey}
       />
     );
   }

@@ -13,7 +13,7 @@ class Dashboard extends React.Component<InterfaceProps> {
     const { user, repository, circleCiKey } = this.props;
 
     return (
-      <div className="c-dashboard">
+      <div className='c-dashboard'>
         <div className='o-wrapper'>
           <header>
             <h1>

@@ -60,7 +60,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
           if (item.outcome === null && item.status === 'running') {
             return (<Status status='pending' key={`${item.build_time_millis}-${item.build_num}`} />)
           } else if (item.outcome === 'success') {
-            return (<Status status='succes' key={`${item.build_time_millis}-${item.build_num}`} />)
+            return (<Status status='success' key={`${item.build_time_millis}-${item.build_num}`} />)
           } else {
             return (<Status status='error' key={`${item.build_time_millis}-${item.build_num}`} />)
           }
@@ -77,7 +77,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     const { builds, fetching } = this.state;
 
     return (
-      <div className="c-timeline">
+      <div className='c-timeline'>
         {fetching && <Loader />}
         {!fetching && builds && builds.length && this.renderTimeline()}
       </div>

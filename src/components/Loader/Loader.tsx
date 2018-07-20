@@ -4,7 +4,7 @@ class Loader extends React.Component {
   public render() {
 
     return (
-      <div className="c-loader">
+      <div className='c-loader'>
         Loading...
       </div>
     );
