@@ -11,6 +11,16 @@
 .c-status {
   margin: 1px;
   padding: 5px;
+
+  color: $cb-white;
+
+  text-decoration: none;
+  text-shadow: 0 0 3px grey;
+
+  &:hover {
+    padding: 6px;
+    box-shadow: 0 0 5px grey;
+  }
 }
 
 // === MODIFIER ===

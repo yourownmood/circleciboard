@@ -18,6 +18,7 @@ interface InterfaceState {
 
 interface InterfaceResponseItem {
   build_num: number,
+  build_url: string,
   build_time_millis: number,
   outcome: string,
   why: string,
@@ -68,11 +69,11 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
       render = this.state.builds.map((item: InterfaceResponseItem) => {
         if (item.why === 'scheduled-workflow') {
           if (item.outcome === null && item.status === 'running') {
-            return (<Status status='pending' key={`${item.build_time_millis}-${item.build_num}`} />)
+            return (<Status status='pending' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           } else if (item.outcome === 'success') {
-            return (<Status status='success' key={`${item.build_time_millis}-${item.build_num}`} />)
+            return (<Status status='success' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           } else {
-            return (<Status status='error' key={`${item.build_time_millis}-${item.build_num}`} />)
+            return (<Status status='error' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           }
         } else {
           return

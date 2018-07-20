@@ -13,6 +13,7 @@ const builds = [
   {
     build_num: 1,
     build_time_millis: 100,
+    build_url: 'http://buildurl.com',
     outcome: 'success',
     status: 'finished',
     why: 'scheduled-workflow'
@@ -20,6 +21,7 @@ const builds = [
   {
     build_num: 2,
     build_time_millis: 2000,
+    build_url: 'http://buildurl.com',
     outcome: 'error',
     status: 'finished',
     why: 'scheduled-workflow'
@@ -27,6 +29,7 @@ const builds = [
   {
     build_num: 3,
     build_time_millis: 150,
+    build_url: 'http://buildurl.com',
     outcome: 'success',
     status: 'finished',
     why: 'scheduled-workflow'
@@ -34,6 +37,7 @@ const builds = [
   {
     build_num: 4,
     build_time_millis: 1050,
+    build_url: 'http://buildurl.com',
     outcome: null,
     status: 'running',
     why: 'scheduled-workflow'
@@ -41,6 +45,7 @@ const builds = [
   {
     build_num: 5,
     build_time_millis: 1250,
+    build_url: 'http://buildurl.com',
     outcome: null,
     status: 'finished',
     why: 'commit'
