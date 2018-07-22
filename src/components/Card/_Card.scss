@@ -1,0 +1,30 @@
+// --------------------------------------------------
+// +++ COMPONENT CARD +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// CARD
+
+.c-card {
+  padding: 20px;
+
+  border: 1px solid #cecece;
+
+  border-radius: 3px;
+
+  background-color: $cb-white;
+
+  box-shadow: 0 0 4px 2px rgba($cb-black, 0.04);
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// TITLE
+
+.c-card__title {
+  margin-bottom: 10px;
+}

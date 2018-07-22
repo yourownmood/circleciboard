@@ -75,7 +75,7 @@ it('should handle call clearInterval on unmount', () => {
   jest.useFakeTimers();
   const component = mount(<Timeline {...props} />);
   component.unmount();
-  expect(clearInterval).toHaveBeenCalledWith(2);
+  expect(clearInterval).toHaveBeenCalledWith(1);
 });
 
 describe('renderTimeline', () => {

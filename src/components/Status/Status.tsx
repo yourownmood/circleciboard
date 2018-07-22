@@ -12,9 +12,9 @@ class Status extends React.Component<InterfaceProps> {
 
     return (
       <a href={url} target='_blank' rel='noopener noreferrer' className={`c-status c-status--${status}`}>
-        {status === 'success' && <b>v</b>}
-        {status === 'error' && <b>x</b>}
-        {status === 'pending' && <b>-</b>}
+        {status === 'success' && <span className='c-status__icon'>v</span>}
+        {status === 'error' && <span className='c-status__icon'>x</span>}
+        {status === 'pending' && <span className='c-status__icon'>-</span>}
       </a>
     );
   }

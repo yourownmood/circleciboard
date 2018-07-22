@@ -17,6 +17,8 @@ html,
 body {
   width: 100%;
 
+  background-color: $cb-silver;
+
   @include font-open-sans();
   font-weight: 300;
 }

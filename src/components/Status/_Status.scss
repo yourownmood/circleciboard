@@ -9,18 +9,25 @@
 // STATUS
 
 .c-status {
-  margin: 1px;
-  padding: 5px;
+  flex: 1;
+
+  display: inline-block;
+  height: 52px;
+
+  margin-right: 3px;
 
   color: $cb-white;
 
+  line-height: 52px;
+
+  text-align: center;
   text-decoration: none;
   text-shadow: 0 0 3px grey;
 
-  &:hover {
-    padding: 6px;
+  vertical-align: middle;
 
-    box-shadow: 0 0 5px grey;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
@@ -30,17 +37,29 @@
 // SUCCESS
 
 .c-status--success {
-  background-color: green;
+  background-color: $cb-aquamarine;
+
+  &:hover {
+    background-color: darken($cb-aquamarine, 25%);
+  }
 }
 
 // ERROR
 
 .c-status--error {
   background-color: red;
+
+  &:hover {
+    background-color: darken(red, 25%);
+  }
 }
 
 // PENDING
 
 .c-status--pending {
   background-color: blue;
+
+  &:hover {
+    background-color: darken(blue, 25%);
+  }
 }

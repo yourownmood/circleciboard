@@ -9,13 +9,14 @@
 // TIMELINE
 
 .c-timeline {
-  display: block;
+  flex-direction: row;
+  align-items: stretch;
 
-  margin-top: 10px;
+  display: flex;
 
-  .c-status:first-child {
-    padding: 7px;
+  padding: 3px;
 
-    border: 1px solid grey;
-  }
+  border: 1px solid $cb-mercury;
+
+  border-radius: 3px;
 }
