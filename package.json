@@ -18,6 +18,7 @@
     "watch-css": "yarn build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "test": "react-scripts-ts test --env=jsdom",
     "test:coverage": "yarn test --coverage",
+    "lint": "stylelint 'src/**/*.scss'",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
@@ -33,6 +34,8 @@
     "npm-run-all": "^4.1.2",
     "react-test-renderer": "^16.4.1",
     "sassaby": "^2.1.1",
+    "stylelint": "^9.3.0",
+    "stylelint-order": "^0.8.1",
     "typescript": "^2.9.1"
   }
 }
