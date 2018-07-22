@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import * as React from 'react';
 import 'whatwg-fetch';
 
@@ -8,6 +9,7 @@ interface InterfaceProps {
   user: string,
   repository: string,
   circleCiKey: string,
+  reverse?: boolean
 }
 
 interface InterfaceState {
@@ -26,6 +28,10 @@ interface InterfaceResponseItem {
 }
 
 class Timeline extends React.Component<InterfaceProps, InterfaceState> {
+  public static defaultProps = {
+    reverse: false
+  }
+
   private intervalId: any;
 
   constructor(props: InterfaceProps) {
@@ -85,10 +91,11 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
   }
 
   public render() {
+    const { reverse } = this.props;
     const { builds, fetching, refreshing } = this.state;
 
     return (
-      <div className='c-timeline'>
+      <div className={classNames('c-timeline', { 'c-timeline--reverse': reverse })}>
         {fetching && !builds && <Loader />}
         {!fetching && builds && builds.length && this.renderTimeline()}
         {refreshing && <div className="c-timeline__refreshing">Refreshing</div>}

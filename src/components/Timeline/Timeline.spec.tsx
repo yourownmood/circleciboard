@@ -71,6 +71,11 @@ it('should show refreshing when fetching on interval', () => {
   });
 });
 
+it('should show the timeline in reverse order', () => {
+  const component = mount(<Timeline {...props} reverse={true} />);
+  expect(component.find('.c-timeline--reverse')).toHaveLength(1);
+});
+
 it('should handle call clearInterval on unmount', () => {
   jest.useFakeTimers();
   const component = mount(<Timeline {...props} />);

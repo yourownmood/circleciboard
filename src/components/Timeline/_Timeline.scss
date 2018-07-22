@@ -20,3 +20,24 @@
 
   border-radius: 3px;
 }
+
+// === OPTIONS ===
+// --------------------------------------------------
+
+// REVERSE
+
+.c-timeline--reverse {
+  direction: rtl;
+
+  .c-status {
+    direction: ltr;
+
+    &:first-child {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 3px;
+    }
+  }
+}
