@@ -15,6 +15,7 @@ const builds = [
     build_time_millis: 100,
     build_url: 'http://buildurl.com',
     outcome: 'success',
+    start_time: '2018-07-23T08:00:22.167Z',
     status: 'finished',
     why: 'scheduled-workflow'
   },
@@ -23,6 +24,7 @@ const builds = [
     build_time_millis: 2000,
     build_url: 'http://buildurl.com',
     outcome: 'error',
+    start_time: '2018-07-23T08:00:22.167Z',
     status: 'finished',
     why: 'scheduled-workflow'
   },
@@ -31,6 +33,7 @@ const builds = [
     build_time_millis: 150,
     build_url: 'http://buildurl.com',
     outcome: 'success',
+    start_time: '2018-07-23T08:00:22.167Z',
     status: 'finished',
     why: 'scheduled-workflow'
   },
@@ -39,6 +42,7 @@ const builds = [
     build_time_millis: 1050,
     build_url: 'http://buildurl.com',
     outcome: null,
+    start_time: '2018-07-23T08:00:22.167Z',
     status: 'running',
     why: 'scheduled-workflow'
   },
@@ -47,6 +51,7 @@ const builds = [
     build_time_millis: 1250,
     build_url: 'http://buildurl.com',
     outcome: null,
+    start_time: '2015-07-23T08:00:22.167Z',
     status: 'finished',
     why: 'commit'
   },
@@ -91,6 +96,28 @@ describe('renderTimeline', () => {
       expect(Status.find({ status: 'success' })).toHaveLength(2);
       expect(Status.find({ status: 'error' })).toHaveLength(1);
       expect(Status.find({ status: 'pending' })).toHaveLength(1);
+    });
+  });
+});
+
+describe('Rendering of time labels', () => {
+  it('should handle renderMostRecentTime correctly', () => {
+    const component = mount(<Timeline {...props} />);
+    const instance = component.instance() as Timeline;
+    component.setState({ builds }, () => {
+      instance.renderMostRecentTime();
+      expect(component.find('.c-timeline__label').first().text()).toContain('Most recent');
+      expect(component.find('.c-timeline__label').first().text()).toContain('2018');
+    });
+  });
+
+  it('should handle renderOldestTime correctly', () => {
+    const component = mount(<Timeline {...props} />);
+    const instance = component.instance() as Timeline;
+    component.setState({ builds }, () => {
+      instance.renderOldestTime();
+      expect(component.find('.c-timeline__label').last().text()).toContain('Oldest');
+      expect(component.find('.c-timeline__label').last().text()).toContain('2015');
     });
   });
 });

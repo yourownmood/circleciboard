@@ -9,6 +9,41 @@
 // TIMELINE
 
 .c-timeline {
+  width: 100%;
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// LABELS
+
+.c-timeline__labels {
+  flex-direction: row;
+  align-items: stretch;
+
+  display: flex;
+
+  padding-bottom: 5px;
+}
+
+// LABEL
+
+.c-timeline__label {
+  flex: 1;
+
+  display: inline-block;
+
+  @include font-size(10px);
+  color: $cb-mercury;
+
+  &:last-child {
+    text-align: right;
+  }
+}
+
+// BAR
+
+.c-timeline__bar {
   flex-direction: row;
   align-items: stretch;
 
@@ -38,6 +73,26 @@
 
     &:last-child {
       margin-right: 3px;
+    }
+  }
+
+  .c-loader {
+    direction: ltr;
+  }
+
+  .c-timeline__refreshing {
+    direction: ltr;
+  }
+
+  .c-timeline__label {
+    direction: ltr;
+
+    &:first-child {
+      text-align: right;
+    }
+
+    &:last-child {
+      text-align: left;
     }
   }
 }

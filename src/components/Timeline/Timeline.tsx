@@ -13,7 +13,7 @@ interface InterfaceProps {
 }
 
 interface InterfaceState {
-  builds: [{}] | null,
+  builds: InterfaceResponseItem[] | null,
   fetching: boolean,
   refreshing: boolean
 }
@@ -24,6 +24,7 @@ interface InterfaceResponseItem {
   build_time_millis: number,
   outcome: string,
   why: string,
+  start_time: string,
   status: string
 }
 
@@ -53,10 +54,15 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     clearInterval(this.intervalId);
   }
 
+  public getFilteredBuilds = (filter: string, array: InterfaceResponseItem[] ) => array.filter(build => build.why === filter);
+
   public callApi = (refreshing: boolean) => {
     this.setState({ fetching: true, refreshing });
     this.fetchApi()
-      .then(data => this.setState({ builds: data, fetching: false, refreshing: false }))
+      .then((data) => {
+        const filteredBuilds = this.getFilteredBuilds('scheduled-workflow', data);
+        this.setState({ builds: filteredBuilds, fetching: false, refreshing: false });
+      })
       .catch(reason => console.log(reason.message));
   }
 
@@ -90,15 +96,39 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     return render
   }
 
+  public renderMostRecentTime = () => {
+    const { builds } = this.state;
+    if (builds && builds.length) {
+      return (<span>{builds[0].start_time}</span>);
+    } else {
+      return (<span>...</span>);
+    }
+  }
+
+  public renderOldestTime = () => {
+    const { builds } = this.state;
+    if (builds && builds.length) {
+      return (<span>{builds[builds.length - 1].start_time}</span>);
+    } else {
+      return (<span>...</span>);
+    }
+  }
+
   public render() {
     const { reverse } = this.props;
     const { builds, fetching, refreshing } = this.state;
 
     return (
       <div className={classNames('c-timeline', { 'c-timeline--reverse': reverse })}>
-        {fetching && !builds && <Loader />}
-        {!fetching && builds && builds.length && this.renderTimeline()}
-        {refreshing && <div className="c-timeline__refreshing">Refreshing</div>}
+        <div className='c-timeline__labels'>
+          <span className='c-timeline__label'>Most recent ({this.renderMostRecentTime()})</span>
+          <span className='c-timeline__label'>Oldest ({this.renderOldestTime()})</span>
+        </div>
+        <div className='c-timeline__bar'>
+          {fetching && !builds && <Loader />}
+          {!fetching && builds && builds.length && this.renderTimeline()}
+          {refreshing && <div className="c-timeline__refreshing">Refreshing</div>}
+        </div>
       </div>
     );
   }
