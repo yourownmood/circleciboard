@@ -112,9 +112,9 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
           </span>
         </div>
         <div className='c-timeline__bar'>
-          {fetching && !builds && <Loader />}
+          {fetching && !builds && <Loader label='Loading...' />}
           {!fetching && builds && builds.length && this.renderTimeline()}
-          {refreshing && <div className="c-timeline__refreshing">Refreshing</div>}
+          {refreshing && <Loader label='Refreshing' />}
         </div>
       </div>
     );

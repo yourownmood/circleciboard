@@ -1,11 +1,16 @@
 import * as React from 'react'
 
-class Loader extends React.Component {
+interface InterfaceProps {
+  label: string,
+}
+
+class Loader extends React.Component<InterfaceProps> {
   public render() {
+    const { label } = this.props;
 
     return (
       <div className='c-loader'>
-        Loading...
+        {label}
       </div>
     );
   }
