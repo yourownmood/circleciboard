@@ -47,10 +47,10 @@
 // ERROR
 
 .c-status--error {
-  background-color: red;
+  background-color: $cb-tangerine;
 
   &:hover {
-    background-color: darken(red, 25%);
+    background-color: darken($cb-tangerine, 25%);
   }
 }
 
