@@ -19,7 +19,7 @@ body {
 
   background-color: $cb-silver;
 
-  @include font-open-sans();
+  @include font-roboto();
   font-weight: 300;
 }
 
