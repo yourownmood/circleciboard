@@ -2,6 +2,10 @@
 // +++ COMPONENT TIMELINE +++
 // --------------------------------------------------
 
+// === VARIABLES ===
+// --------------------------------------------------
+
+$timeline-breakpoint: mobileLandscape;
 
 // === BASE ===
 // --------------------------------------------------
@@ -73,6 +77,10 @@
 
     &:last-child {
       margin-right: 3px;
+
+      @include mq($until: $timeline-breakpoint) {
+        margin-right: 2px;
+      }
     }
   }
 

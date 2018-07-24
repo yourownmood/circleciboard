@@ -3,6 +3,11 @@
 // --------------------------------------------------
 
 
+// === VARIABLES ===
+// --------------------------------------------------
+
+$status-breakpoint: mobileLandscape;
+
 // === BASE ===
 // --------------------------------------------------
 
@@ -28,6 +33,21 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @include mq($until: $status-breakpoint) {
+    margin-right: 2px;
+  }
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// ICON
+
+.c-status__icon {
+  @include mq($until: $status-breakpoint) {
+    display: none;
   }
 }
 
