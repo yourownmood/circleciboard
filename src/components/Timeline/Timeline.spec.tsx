@@ -103,21 +103,15 @@ describe('renderTimeline', () => {
 describe('Rendering of time labels', () => {
   it('should handle renderMostRecentTime correctly', () => {
     const component = mount(<Timeline {...props} />);
-    const instance = component.instance() as Timeline;
     component.setState({ builds }, () => {
-      instance.renderMostRecentTime();
       expect(component.find('.c-timeline__label').first().text()).toContain('Most recent');
-      expect(component.find('.c-timeline__label').first().text()).toContain('2018');
     });
   });
 
   it('should handle renderOldestTime correctly', () => {
     const component = mount(<Timeline {...props} />);
-    const instance = component.instance() as Timeline;
     component.setState({ builds }, () => {
-      instance.renderOldestTime();
       expect(component.find('.c-timeline__label').last().text()).toContain('Oldest');
-      expect(component.find('.c-timeline__label').last().text()).toContain('2015');
     });
   });
 });
