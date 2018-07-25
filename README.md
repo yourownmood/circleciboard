@@ -1,4 +1,4 @@
-# circleboard
+# circleciboard
 
 CircleCi Dashboard application
 
