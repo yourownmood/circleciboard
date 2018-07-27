@@ -5,15 +5,10 @@ import './styles/main.css'
 
 class App extends React.Component {
   public render() {
-    const Settings = require('./settings.json');
+    const Config = require('./settings.json');
 
     return (
-      <Dashboard
-        user={Settings.user}
-        repository={Settings.repository}
-        circleCiKey={Settings.circleCiKey}
-        workflow={Settings.workflow}
-      />
+      <Dashboard config={Config} />
     );
   }
 }

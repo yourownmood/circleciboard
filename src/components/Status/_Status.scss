@@ -77,9 +77,9 @@ $status-breakpoint: mobileLandscape;
 // PENDING
 
 .c-status--pending {
-  background-color: blue;
+  background-color: $cb-turquoise;
 
   &:hover {
-    background-color: darken(blue, 25%);
+    background-color: darken($cb-turquoise, 25%);
   }
 }

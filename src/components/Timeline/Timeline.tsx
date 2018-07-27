@@ -8,6 +8,7 @@ import TimeFromNow from '../TimeFromNow';
 
 interface InterfaceProps {
   circleCiKey: string,
+  limit: number,
   repository: string,
   reverse?: boolean,
   user: string,
@@ -17,7 +18,7 @@ interface InterfaceProps {
 interface InterfaceState {
   builds: InterfaceResponseItem[] | null,
   fetching: boolean,
-  refreshing: boolean
+  refreshing: boolean,
 }
 
 interface InterfaceResponseItem {
@@ -43,7 +44,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     this.state = {
       builds: null,
       fetching: false,
-      refreshing: false
+      refreshing: false,
     };
   }
 
@@ -63,14 +64,14 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     this.fetchApi()
       .then((data) => {
         const filteredBuilds = this.getFilteredBuilds(this.props.workflow, data);
-        this.setState({ builds: filteredBuilds, fetching: false, refreshing: false });
+        this.setState({ builds: filteredBuilds.slice(0, this.props.limit), fetching: false, refreshing: false });
       })
       .catch(reason => console.log(reason.message));
   }
 
   public async fetchApi() {
     const { user, repository, circleCiKey } = this.props;
-    const url = `https://circleci.com/api/v1.1/project/github/${user}/${repository}?circle-token=${circleCiKey}`;
+    const url = `https://circleci.com/api/v1.1/project/github/${user}/${repository}?circle-token=${circleCiKey}&limit=100`;
     const apiResponse = await fetch(url);
     const data = await apiResponse.json();
     return data;

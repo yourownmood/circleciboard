@@ -26,3 +26,4 @@ GET | https://circleci.com/api/v1.1/project/github/yourownmood/eneco-e2e/45/arti
 - [x] Add Jest testing
 - [x] SCSS Linting
 - [ ] Add prepush/precommit
+- [ ] Validate code with CircleCi

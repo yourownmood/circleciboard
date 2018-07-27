@@ -5,7 +5,9 @@ import Card from './Card';
 
 const props = {
   circleCiKey: 'aaabbbccc999',
+  limit: 30,
   repository: 'Repository',
+  title: 'Title',
   user: 'Username',
   workflow: 'Workflow'
 }

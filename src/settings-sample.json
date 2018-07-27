@@ -1,6 +1,9 @@
-{
-  "user": "username",
-  "repository": "repository",
-  "circleCiKey": "aaabbbccc999",
-  "workflow": "commit-workflow"
-}
+[
+  {
+    "circleCiKey": "aaabbbccc999",
+    "repository": "repository",
+    "title": "Title",
+    "user": "username",
+    "workflow": "commit-workflow"
+  }
+]

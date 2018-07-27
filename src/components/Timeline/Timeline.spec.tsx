@@ -5,6 +5,7 @@ import Timeline from './Timeline';
 
 const props = {
   circleCiKey: 'aaabbbccc999',
+  limit: 30,
   repository: 'Repository',
   user: 'Username',
   workflow: 'scheduled-workflow'

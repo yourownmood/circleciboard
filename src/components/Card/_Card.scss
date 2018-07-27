@@ -9,6 +9,7 @@
 // CARD
 
 .c-card {
+  margin-bottom: 40px;
   padding: 20px;
 
   border: 1px solid #cecece;
@@ -26,5 +27,14 @@
 // TITLE
 
 .c-card__title {
-  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+// SUBLINE
+
+.c-card__subline {
+  margin-bottom: 12px;
+
+  @include font-size(12px);
+  color: $cb-dusty;
 }
