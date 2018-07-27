@@ -15,8 +15,8 @@ class Dashboard extends React.Component<InterfaceProps> {
 
     return (
       <div className='c-dashboard'>
+        <Header title='Eneco Salesflow' />
         <div className='o-wrapper'>
-          <Header title='Eneco Salesflow' />
           <Card user={user} repository={repository} circleCiKey={circleCiKey} />
         </div>
       </div>

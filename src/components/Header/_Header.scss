@@ -11,6 +11,26 @@
 .c-header {
   width: 100%;
 
-  padding-top: 40px;
-  padding-bottom: 20px;
+  margin-bottom: 60px;
+  padding: 20px;
+
+  border-bottom: 1px solid $cb-mercury;
+
+  background-color: $cb-white;
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// TITLE
+
+.c-header__title {
+  @include font-size(21px);
+  color: $cb-gunpowder;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 }

@@ -10,7 +10,7 @@ class Header extends React.Component<InterfaceProps> {
 
     return (
       <header className='c-header'>
-        <h1>{title}</h1>
+        <h1 className='c-header__title'>{title}</h1>
       </header>
     );
   }
