@@ -12,6 +12,7 @@ class App extends React.Component {
         user={Settings.user}
         repository={Settings.repository}
         circleCiKey={Settings.circleCiKey}
+        workflow={Settings.workflow}
       />
     );
   }

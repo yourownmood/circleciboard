@@ -7,6 +7,7 @@ const props = {
   circleCiKey: 'aaabbbccc999',
   repository: 'Repository',
   user: 'Username',
+  workflow: 'scheduled-workflow'
 }
 
 const builds = [
@@ -64,21 +65,21 @@ it('renders without crashing', () => {
 
 it('should show a loader when fetching', () => {
   const component = shallow(<Timeline {...props} />);
-  component.setState({ fetching: false }, () => {
+  component.setState({ refreshing: false, fetching: true }, () => {
     expect(component.find('Loader')).toHaveLength(1);
   });
 });
 
 it('should show refreshing when fetching on interval', () => {
   const component = mount(<Timeline {...props} />);
-  component.setState({ refreshing: true }, () => {
-    expect(component.find('.c-timeline__refreshing')).toHaveLength(1);
+  component.setState({ refreshing: true, fetching: false }, () => {
+    expect(component.find('Loader')).toHaveLength(1);
   });
 });
 
 it('should show the timeline in reverse order', () => {
   const component = mount(<Timeline {...props} reverse={true} />);
-  expect(component.find('.c-timeline--reverse')).toHaveLength(1);
+  expect(component.find('.c-timeline .c-timeline--reverse')).toHaveLength(1);
 });
 
 it('should handle call clearInterval on unmount', () => {

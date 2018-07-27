@@ -7,10 +7,11 @@ import Status from '../Status';
 import TimeFromNow from '../TimeFromNow';
 
 interface InterfaceProps {
-  user: string,
-  repository: string,
   circleCiKey: string,
-  reverse?: boolean
+  repository: string,
+  reverse?: boolean,
+  user: string,
+  workflow: string
 }
 
 interface InterfaceState {
@@ -61,7 +62,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     this.setState({ fetching: true, refreshing });
     this.fetchApi()
       .then((data) => {
-        const filteredBuilds = this.getFilteredBuilds('scheduled-workflow', data);
+        const filteredBuilds = this.getFilteredBuilds(this.props.workflow, data);
         this.setState({ builds: filteredBuilds, fetching: false, refreshing: false });
       })
       .catch(reason => console.log(reason.message));
@@ -80,7 +81,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
 
     if (this.state.builds && this.state.builds.length) {
       render = this.state.builds.map((item: InterfaceResponseItem) => {
-        if (item.why === 'scheduled-workflow') {
+        if (item.why === this.props.workflow) {
           if (item.outcome === null && item.status === 'running') {
             return (<Status status='pending' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           } else if (item.outcome === 'success') {

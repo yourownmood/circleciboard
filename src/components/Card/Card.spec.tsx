@@ -7,6 +7,7 @@ const props = {
   circleCiKey: 'aaabbbccc999',
   repository: 'Repository',
   user: 'Username',
+  workflow: 'Workflow'
 }
 
 it('renders without crashing', () => {

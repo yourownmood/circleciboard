@@ -1,5 +1,6 @@
 {
   "user": "username",
   "repository": "repository",
-  "circleCiKey": "aaabbbccc999"
+  "circleCiKey": "aaabbbccc999",
+  "workflow": "commit-workflow"
 }
