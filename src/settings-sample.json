@@ -1,9 +1,12 @@
-[
-  {
-    "circleCiKey": "aaabbbccc999",
-    "repository": "repository",
-    "title": "Title",
-    "user": "username",
-    "workflow": "commit-workflow"
-  }
-]
+{
+  "title": "Dashboard title",
+  "config": [
+    {
+      "circleCiKey": "aaabbbccc999",
+      "repository": "repository",
+      "title": "Title",
+      "user": "username",
+      "workflow": "commit-workflow"
+    }
+  ]
+}

@@ -5,10 +5,10 @@ import './styles/main.css'
 
 class App extends React.Component {
   public render() {
-    const Config = require('./settings.json');
+    const Settings = require('./settings.json');
 
     return (
-      <Dashboard config={Config} />
+      <Dashboard title={Settings.title} config={Settings.config} />
     );
   }
 }

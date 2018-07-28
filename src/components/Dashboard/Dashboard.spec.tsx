@@ -21,7 +21,8 @@ const props = {
       user: 'Username',
       workflow: 'Workflow'
     }
-  ]
+  ],
+  title: 'Title'
 }
 
 it('renders without crashing', () => {

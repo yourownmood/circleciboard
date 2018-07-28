@@ -4,6 +4,7 @@ import Card from '../Card';
 import Header from '../Header';
 
 interface InterfaceProps {
+  title: string,
   config: Array<{
     circleCiKey: string,
     limit: number,
@@ -16,11 +17,11 @@ interface InterfaceProps {
 
 class Dashboard extends React.Component<InterfaceProps> {
   public render() {
-    const { config } = this.props;
+    const { config, title } = this.props;
 
     return (
       <div className='c-dashboard'>
-        <Header title='Eneco Salesflow' />
+        <Header title={title} />
         <div className='o-wrapper'>
           {config.length &&
             config.map((configuration) => (
