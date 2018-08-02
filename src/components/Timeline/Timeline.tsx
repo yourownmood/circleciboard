@@ -28,7 +28,10 @@ interface InterfaceResponseItem {
   outcome: string,
   why: string,
   start_time: string,
-  status: string
+  status: string,
+  workflows: {
+    workflow_name: string
+  }
 }
 
 class Timeline extends React.Component<InterfaceProps, InterfaceState> {
@@ -57,7 +60,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     clearInterval(this.intervalId);
   }
 
-  public getFilteredBuilds = (filter: string, array: InterfaceResponseItem[] ) => array.filter(build => build.why === filter);
+  public getFilteredBuilds = (filter: string, array: InterfaceResponseItem[] ) => array.filter(build => build.workflows && build.workflows.workflow_name && build.workflows.workflow_name === filter);
 
   public callApi = (refreshing: boolean) => {
     this.setState({ fetching: true, refreshing });
@@ -82,7 +85,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
 
     if (this.state.builds && this.state.builds.length) {
       render = this.state.builds.map((item: InterfaceResponseItem) => {
-        if (item.why === this.props.workflow) {
+        if (item.workflows.workflow_name === this.props.workflow) {
           if (item.outcome === null && item.status === 'running') {
             return (<Status status='pending' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           } else if (item.outcome === 'success') {

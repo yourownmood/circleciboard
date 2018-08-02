@@ -8,7 +8,7 @@ const props = {
   limit: 30,
   repository: 'Repository',
   user: 'Username',
-  workflow: 'scheduled-workflow'
+  workflow: 'string'
 }
 
 const builds = [
@@ -19,7 +19,10 @@ const builds = [
     outcome: 'success',
     start_time: '2018-07-23T08:00:22.167Z',
     status: 'finished',
-    why: 'scheduled-workflow'
+    why: 'scheduled-workflow',
+    workflows: {
+      workflow_name: 'string'
+    }
   },
   {
     build_num: 2,
@@ -28,7 +31,10 @@ const builds = [
     outcome: 'error',
     start_time: '2018-07-23T08:00:22.167Z',
     status: 'finished',
-    why: 'scheduled-workflow'
+    why: 'scheduled-workflow',
+    workflows: {
+      workflow_name: 'string'
+    }
   },
   {
     build_num: 3,
@@ -37,7 +43,10 @@ const builds = [
     outcome: 'success',
     start_time: '2018-07-23T08:00:22.167Z',
     status: 'finished',
-    why: 'scheduled-workflow'
+    why: 'scheduled-workflow',
+    workflows: {
+      workflow_name: 'string'
+    }
   },
   {
     build_num: 4,
@@ -46,7 +55,10 @@ const builds = [
     outcome: null,
     start_time: '2018-07-23T08:00:22.167Z',
     status: 'running',
-    why: 'scheduled-workflow'
+    why: 'scheduled-workflow',
+    workflows: {
+      workflow_name: 'string'
+    }
   },
   {
     build_num: 5,
@@ -55,7 +67,10 @@ const builds = [
     outcome: null,
     start_time: '2015-07-23T08:00:22.167Z',
     status: 'finished',
-    why: 'commit'
+    why: 'commit',
+    workflows: {
+      workflow_name: 'commit'
+    }
   },
 ]
 
