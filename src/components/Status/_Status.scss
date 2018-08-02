@@ -83,3 +83,13 @@ $status-breakpoint: mobileLandscape;
     background-color: darken($cb-turquoise, 25%);
   }
 }
+
+// NOT-RUNNING
+
+.c-status--not_running {
+  background-color: $cb-lavender;
+
+  &:hover {
+    background-color: darken($cb-lavender, 25%);
+  }
+}

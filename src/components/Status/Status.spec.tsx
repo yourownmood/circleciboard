@@ -20,8 +20,14 @@ it('should render error status correctly', () => {
   expect(component.find('.c-status').text()).toEqual('x');
 });
 
-it('should render error pending correctly', () => {
+it('should render pending status correctly', () => {
   const component = shallow(<Status {...props} status='pending' />);
   expect(component.find('.c-status--pending')).toHaveLength(1);
+  expect(component.find('.c-status').text()).toEqual('-');
+});
+
+it('should render not_running status correctly', () => {
+  const component = shallow(<Status {...props} status='not_running' />);
+  expect(component.find('.c-status--not_running')).toHaveLength(1);
   expect(component.find('.c-status').text()).toEqual('-');
 });

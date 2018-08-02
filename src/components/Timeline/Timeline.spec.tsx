@@ -72,6 +72,18 @@ const builds = [
       workflow_name: 'commit'
     }
   },
+  {
+    build_num: 6,
+    build_time_millis: 1250,
+    build_url: 'http://buildurl.com',
+    outcome: null,
+    start_time: '2015-07-23T08:00:22.167Z',
+    status: 'not_running',
+    why: 'scheduled-workflow',
+    workflows: {
+      workflow_name: 'string'
+    }
+  },
 ]
 
 it('renders without crashing', () => {
@@ -113,6 +125,7 @@ describe('renderTimeline', () => {
       expect(Status.find({ status: 'success' })).toHaveLength(2);
       expect(Status.find({ status: 'error' })).toHaveLength(1);
       expect(Status.find({ status: 'pending' })).toHaveLength(1);
+      expect(Status.find({ status: 'not_running' })).toHaveLength(1);
     });
   });
 });

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 interface InterfaceProps {
   key: string,
-  status: 'success' | 'error' | 'pending',
+  status: 'success' | 'error' | 'pending' | 'not_running',
   url: string
 }
 
@@ -15,6 +15,7 @@ class Status extends React.Component<InterfaceProps> {
         {status === 'success' && <span className='c-status__icon'>v</span>}
         {status === 'error' && <span className='c-status__icon'>x</span>}
         {status === 'pending' && <span className='c-status__icon'>-</span>}
+        {status === 'not_running' && <span className='c-status__icon'>-</span>}
       </a>
     );
   }

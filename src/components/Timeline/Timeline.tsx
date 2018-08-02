@@ -90,6 +90,8 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
             return (<Status status='pending' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           } else if (item.outcome === 'success') {
             return (<Status status='success' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
+          } else if (item.status === 'not_running') {
+            return (<Status status='not_running' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           } else {
             return (<Status status='error' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           }
