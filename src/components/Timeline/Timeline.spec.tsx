@@ -101,7 +101,7 @@ it('should show a loader when fetching', () => {
 it('should show refreshing when fetching on interval', () => {
   const component = mount(<Timeline {...props} />);
   component.setState({ refreshing: true, fetching: false }, () => {
-    expect(component.find('Loader')).toHaveLength(1);
+    expect(component.find('.c-timeline__overlay')).toHaveLength(1);
   });
 });
 
@@ -143,5 +143,14 @@ describe('Rendering of time labels', () => {
     component.setState({ builds }, () => {
       expect(component.find('.c-timeline__label').last().text()).toContain('Oldest');
     });
+  });
+});
+
+describe('getFilteredBuilds', () => {
+  it('should handle getFilteredBuilds correctly', () => {
+    const component = shallow(<Timeline {...props} />);
+    const instance = component.instance() as Timeline;
+    const result = instance.getFilteredBuilds('commit', builds);
+    expect(result).toEqual([builds[4]]);
   });
 });

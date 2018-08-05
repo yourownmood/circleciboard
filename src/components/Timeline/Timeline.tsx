@@ -25,7 +25,7 @@ interface InterfaceResponseItem {
   build_num: number,
   build_url: string,
   build_time_millis: number,
-  outcome: string,
+  outcome: string | null,
   why: string,
   start_time: string,
   status: string,
@@ -120,8 +120,8 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
         </div>
         <div className='c-timeline__bar'>
           {fetching && !builds && <Loader label='Loading...' />}
-          {!fetching && builds && builds.length && this.renderTimeline()}
-          {refreshing && <Loader label='Refreshing' />}
+          {refreshing && <div className='c-timeline__overlay'>Refreshing...</div>}
+          {builds && builds.length && this.renderTimeline()}
         </div>
       </div>
     );

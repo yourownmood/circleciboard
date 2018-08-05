@@ -5,6 +5,7 @@
 // === VARIABLES ===
 // --------------------------------------------------
 
+$timeline-height: 52px;
 $timeline-breakpoint: mobileLandscape;
 
 // === BASE ===
@@ -48,6 +49,8 @@ $timeline-breakpoint: mobileLandscape;
 // BAR
 
 .c-timeline__bar {
+  position: relative;
+
   flex-direction: row;
   align-items: stretch;
 
@@ -58,6 +61,24 @@ $timeline-breakpoint: mobileLandscape;
   border: 1px solid $cb-mercury;
 
   border-radius: 3px;
+}
+
+// OVERLAY
+
+.c-timeline__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgba($cb-white, 0.65);
+
+  color: $cb-gunpowder;
+
+  line-height: $timeline-height;
+
+  text-align: center;
 }
 
 // === OPTIONS ===
