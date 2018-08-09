@@ -121,7 +121,8 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
         <div className='c-timeline__bar'>
           {fetching && !builds && <Loader label='Loading...' />}
           {refreshing && <div className='c-timeline__overlay'>Refreshing...</div>}
-          {builds && builds.length && this.renderTimeline()}
+          {builds && builds.length > 0 && this.renderTimeline()}
+          {builds && builds.length === 0 && <Loader label='No builds found...' />}
         </div>
       </div>
     );

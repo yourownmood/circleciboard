@@ -105,6 +105,13 @@ it('should show refreshing when fetching on interval', () => {
   });
 });
 
+it('should show no builds loader when no matching builds are found', () => {
+  const component = shallow(<Timeline {...props} />);
+  component.setState({ builds: [], fetching: false }, () => {
+    expect(component.find('Loader')).toHaveLength(1);
+  });
+});
+
 it('should show the timeline in reverse order', () => {
   const component = mount(<Timeline {...props} reverse={true} />);
   expect(component.find('.c-timeline .c-timeline--reverse')).toHaveLength(1);
