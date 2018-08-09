@@ -19,24 +19,14 @@ $status-breakpoint: mobileLandscape;
   display: inline-block;
   height: 52px;
 
-  margin-right: 3px;
-
-  color: $cb-white;
-
-  line-height: 52px;
-
-  text-align: center;
-  text-decoration: none;
-  text-shadow: 0 0 3px grey;
-
-  vertical-align: middle;
+  margin-right: 4px;
 
   &:last-child {
     margin-right: 0;
   }
 
   @include mq($until: $status-breakpoint) {
-    margin-right: 2px;
+    margin-right: 3px;
   }
 }
 
@@ -79,6 +69,10 @@ $status-breakpoint: mobileLandscape;
 .c-status--pending {
   background-color: $cb-turquoise;
 
+  animation-name: pending;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
   &:hover {
     background-color: darken($cb-turquoise, 25%);
   }
@@ -89,7 +83,42 @@ $status-breakpoint: mobileLandscape;
 .c-status--not_running {
   background-color: $cb-lavender;
 
+  animation-name: not_running;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
   &:hover {
     background-color: darken($cb-lavender, 25%);
+  }
+}
+
+// === ANIMATIONS ===
+// --------------------------------------------------
+
+@keyframes pending {
+  0% {
+    background-color: $cb-turquoise;
+  }
+
+  50% {
+    background-color: lighten($cb-turquoise, 25%);
+  }
+
+  100% {
+    background-color: $cb-turquoise;
+  }
+}
+
+@keyframes not_running {
+  0% {
+    background-color: $cb-lavender;
+  }
+
+  50% {
+    background-color: lighten($cb-lavender, 25%);
+  }
+
+  100% {
+    background-color: $cb-lavender;
   }
 }
