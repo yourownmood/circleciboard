@@ -19,23 +19,28 @@ class Dashboard extends React.Component<InterfaceProps> {
   public render() {
     const { config, title } = this.props;
 
+    const layout = config.length > 3 ? '2' : '1'
+
     return (
       <div className='c-dashboard'>
         <Header title={title} />
         <div className='o-wrapper'>
-          {config.length &&
-            config.map((configuration) => (
-              <Card
-                key={configuration.workflow}
-                circleCiKey={configuration.circleCiKey}
-                limit={configuration.limit}
-                repository={configuration.repository}
-                title={configuration.title}
-                user={configuration.user}
-                workflow={configuration.workflow}
-              />
-            ))
-          }
+          <div className='o-layout'>
+            {config.length &&
+              config.map((configuration) => (
+                <div key={configuration.workflow} className={`o-layout__item u-1/${layout}@tablet`}>
+                  <Card
+                    circleCiKey={configuration.circleCiKey}
+                    limit={configuration.limit}
+                    repository={configuration.repository}
+                    title={configuration.title}
+                    user={configuration.user}
+                    workflow={configuration.workflow}
+                  />
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     );
