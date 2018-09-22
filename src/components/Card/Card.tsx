@@ -25,6 +25,7 @@ class Card extends React.Component<InterfaceProps> {
           repository={repository}
           user={user}
           workflow={workflow}
+          reverse={true}
         />
       </div>
     );

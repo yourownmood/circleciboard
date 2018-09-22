@@ -87,11 +87,23 @@ $timeline-breakpoint: mobileLandscape;
 // REVERSE
 
 .c-timeline--reverse {
-  direction: rtl;
+  .c-timeline__bar {
+    flex-direction: row-reverse;
+  }
+
+  .c-timeline__labels {
+    flex-direction: row-reverse;
+
+    text-align: right;
+
+    .c-timeline__label {
+      &:last-child {
+        text-align: left;
+      }
+    }
+  }
 
   .c-status {
-    direction: ltr;
-
     &:first-child {
       margin-right: 0;
     }
@@ -102,22 +114,6 @@ $timeline-breakpoint: mobileLandscape;
       @include mq($until: $timeline-breakpoint) {
         margin-right: 3px;
       }
-    }
-  }
-
-  .c-loader {
-    direction: ltr;
-  }
-
-  .c-timeline__label {
-    direction: ltr;
-
-    &:first-child {
-      text-align: right;
-    }
-
-    &:last-child {
-      text-align: left;
     }
   }
 }

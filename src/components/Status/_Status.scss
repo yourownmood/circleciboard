@@ -21,6 +21,22 @@ $status-breakpoint: mobileLandscape;
 
   margin-right: 4px;
 
+  &:first-child {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15);
+
+    &.c-status--success {
+      background-color: darken($cb-aquamarine, 25%);
+    }
+
+    &.c-status--error {
+      background-color: darken($cb-tangerine, 25%);
+    }
+
+    &.c-status--pending {
+      background-color: darken($cb-turquoise, 25%);
+    }
+  }
+
   &:last-child {
     margin-right: 0;
   }

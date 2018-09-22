@@ -15,9 +15,12 @@ $loader-height: 52px;
 
 .c-loader {
   display: block;
+  width: 100%;
   height: $loader-height;
 
   padding: 0 10px;
 
   line-height: $loader-height;
+
+  text-align: center;
 }
