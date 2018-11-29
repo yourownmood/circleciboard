@@ -43,4 +43,22 @@ it('should render the correct layout__item width', () => {
   newConfig[3].workflow = 'Workflow4';
   component.setProps({ config: newConfig })
   expect(component.find(`.o-layout__item`).first().prop('className')).toContain('u-1/2@tablet');
+  newConfig.push({
+    circleCiKey: 'aaabbbccc999',
+    limit: 30,
+    repository: 'Repository',
+    title: 'Title',
+    user: 'Username',
+    workflow: 'Workflow4'
+  })
+  newConfig.push({
+    circleCiKey: 'aaabbbccc999',
+    limit: 30,
+    repository: 'Repository',
+    title: 'Title',
+    user: 'Username',
+    workflow: 'Workflow5'
+  })
+  component.setProps({ config: newConfig })
+  expect(component.find(`.o-layout__item`).first().prop('className')).toContain('u-1/3@tablet');
 });

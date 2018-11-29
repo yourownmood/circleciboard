@@ -19,7 +19,15 @@ class Dashboard extends React.Component<InterfaceProps> {
   public render() {
     const { config, title } = this.props;
 
-    const layout = config.length > 3 ? '2' : '1'
+    let layout: string
+
+    if (config.length < 3) {
+      layout = '1'
+    } else if (config.length < 6) {
+      layout = '2'
+    } else {
+      layout = '3'
+    }
 
     return (
       <div className='c-dashboard'>
