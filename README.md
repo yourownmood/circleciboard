@@ -1,29 +1,48 @@
-# circleciboard
+# CircleciBoard
 
 CircleCi Dashboard application
 
-https://circleci.com/api/v1.1/
+## Getting Started
 
-**Information about signed in user:**
-GET | https://circleci.com/api/v1.1/me?circle-token=:token
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-**List of all projects:**
-GET | https://circleci.com/api/v1.1/projects?circle-token=:token
+```
+yarn install
+```
+Make a copy of `./src/settings-sample.json` as `./src/settings.json`.
+```
+cp src/settings-sample.json src/settings.json
+```
+Adjust the settings.json according to your CircleCi setup/account.
 
-**Last 30 builds:**
-GET | https://circleci.com/api/v1.1/project/github/yourownmood/eneco-e2e?circle-token=:token
+## Development
 
-**Full details of single build:**
-GET | https://circleci.com/api/v1.1/project/github/yourownmood/eneco-e2e/45?circle-token=:token
+Start a local development environment by running:
+```
+yarn start
+```
 
-**Artifacts of build:**
-GET | https://circleci.com/api/v1.1/project/github/yourownmood/eneco-e2e/45/artifacts?circle-token=:token
+## Running the tests
+```
+# Run all tests
+yarn test
 
-## Todo:
+# Run a specific test
+yarn test Loader.spec.tsx
 
-- [x] Adding SCSS pre-processing
-- [x] Including igloocss
-- [x] Add Jest testing
-- [x] SCSS Linting
-- [ ] Add prepush/precommit
-- [ ] Validate code with CircleCi
+# Watch all tests
+yarn test:watch
+
+# Watch a specific file
+yarn test:watch Loader.spec.tsx
+
+# Coverage
+yarn test:coverage
+```
+
+## Deployment
+Creating a build is done by:
+```
+yarn build
+```
+Copy the contents of the `./build` folder to your destination to run the application.
