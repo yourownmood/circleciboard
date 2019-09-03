@@ -1,5 +1,5 @@
+import React from 'react';
 import classNames from 'classnames';
-import * as React from 'react';
 import 'whatwg-fetch';
 
 import Loader from '../Loader';
@@ -60,7 +60,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
     clearInterval(this.intervalId);
   }
 
-  public getFilteredBuilds = (filter: string, array: InterfaceResponseItem[] ) => array.filter(build => build.workflows && build.workflows.workflow_name && build.workflows.workflow_name === filter);
+  public getFilteredBuilds = (filter: string, array: InterfaceResponseItem[]) => array.filter(build => build.workflows && build.workflows.workflow_name && build.workflows.workflow_name === filter);
 
   public callApi = (refreshing: boolean) => {
     this.setState({ fetching: true, refreshing });
@@ -96,7 +96,7 @@ class Timeline extends React.Component<InterfaceProps, InterfaceState> {
             return (<Status status='error' url={item.build_url} key={`${item.build_time_millis}-${item.build_num}`} />)
           }
         } else {
-          return
+          return null
         }
       });
     }

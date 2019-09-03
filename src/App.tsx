@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import Dashboard from './components/Dashboard'
 import './styles/main.css'

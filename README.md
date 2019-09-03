@@ -7,42 +7,50 @@ CircleCi Dashboard application
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ```
-yarn install
+npm install
 ```
+
 Make a copy of `./src/settings-sample.json` as `./src/settings.json`.
+
 ```
 cp src/settings-sample.json src/settings.json
 ```
+
 Adjust the settings.json according to your CircleCi setup/account.
 
 ## Development
 
 Start a local development environment by running:
+
 ```
-yarn start
+npm start
 ```
 
 ## Running the tests
+
 ```
 # Run all tests
-yarn test
+npm run test
 
 # Run a specific test
-yarn test Loader.spec.tsx
+npm run test Loader.spec.tsx
 
 # Watch all tests
-yarn test:watch
+npm run test:watch
 
 # Watch a specific file
-yarn test:watch Loader.spec.tsx
+npm run test:watch Loader.spec.tsx
 
 # Coverage
-yarn test:coverage
+npm run test:coverage
 ```
 
 ## Deployment
+
 Creating a build is done by:
+
 ```
-yarn build
+npm run build
 ```
+
 Copy the contents of the `./build` folder to your destination to run the application.

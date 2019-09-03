@@ -1,5 +1,5 @@
-import * as moment from 'moment';
-import * as React from 'react'
+import React from 'react'
+import moment from 'moment';
 
 interface InterfaceProps {
   time: string | null,
